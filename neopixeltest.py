@@ -23,13 +23,13 @@ def showGreen():
 	pixels.show()
 def showWWhite():
 	pixels.fill(WHITE)
-	pixel.sshow()
+	pixels.sshow()
 
 
 while True:
-	pixels.fill(RED)
+	pixels.fill(0,255,0,0)
 	pixels.show()
-	time.sleep(0.5)
+	#time.sleep(0.5)
 	'''
 	pixels.fill(BLUE)
 	pixels.show()
