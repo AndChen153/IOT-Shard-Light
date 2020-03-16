@@ -27,14 +27,15 @@ def showWWhite():
 
 
 while True:
-	pixels.fill(0,255,0,0)
+	'''
+	pixels.fill(RED)
 	pixels.show()
-	#time.sleep(0.5)
+	time.sleep(0.5)
 	'''
 	pixels.fill(BLUE)
 	pixels.show()
 	time.sleep(0.5)
-
+	'''
 	pixels.fill(GREEN)
 	pixels.show()
 	time.sleep(0.5)
@@ -43,3 +44,4 @@ while True:
 	pixels.show()
 	time.sleep(0.5)
 	'''
+	
