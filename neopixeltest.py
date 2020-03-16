@@ -32,7 +32,12 @@ while True:
 	pixels.show()
 	time.sleep(0.5)
 	'''
-	pixels.fill(BLUE)
+	a = input("")
+	b = input("")
+	c = input("")
+	d = input("")
+	color = (a,b,c,d)
+	pixels.fill(color)
 	pixels.show()
 	time.sleep(0.5)
 	'''
