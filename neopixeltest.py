@@ -3,12 +3,12 @@ import neopixel
 import time
 
 
-pixels = neopixel.NeoPixel(board.D18, 2, pixel_order=neopixel.RGBW)
+pixels = neopixel.NeoPixel(board.D18, 2, pixel_order=neopixel.RGB)
 
 RED = (0,255,0,0)
 BLUE = (0,0,255,0)
 GREEN = (255,0,0,0)
-WHITE = (0,0,0,255)
+#WHITE = (0,0,0,255)
 
 def showRed():
 	pixels.fill(RED)
@@ -35,8 +35,8 @@ while True:
 	a = int(input(""))
 	b = int(input(""))
 	c = int(input(""))
-	d = int(input(""))
-	color = (a,b,c,d)
+	#d = int(input(""))
+	color = (a,b,c)
 	pixels.fill(color)
 	pixels.show()
 	time.sleep(0.5)
