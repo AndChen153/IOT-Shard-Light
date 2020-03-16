@@ -19,7 +19,7 @@ def showBlue():
 	pixels.show()
 
 def showGreen():
-	pixcels.fill(GREEN)
+	pixels.fill(GREEN)
 	pixels.show()
 def showWWhite():
 	pixels.fill(WHITE)
