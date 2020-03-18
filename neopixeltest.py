@@ -42,9 +42,9 @@ while True:
 	#args 3-5 are red green blue
 	elif len(sys.argv)==5 and sys.argv[1]:
 		print("2")
-		R = sys.argv[2]
-		G = sys.argv[3]
-		B = sys.argv[4]
+		R = int(sys.argv[2])
+		G = int(sys.argv[3])
+		B = int(sys.argv[4])
 		COLOR = (R,G,B,0)
 		pixels.fill(COLOR)
 		pixels.show()
