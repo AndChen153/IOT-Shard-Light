@@ -1,7 +1,9 @@
 import board
 import neopixel
 import time
+import argparse
 
+#parser = argparse.ArgumentParser(description='Process some integers.')
 
 pixels = neopixel.NeoPixel(board.D18, 2, pixel_order=neopixel.RGBW)
 
@@ -32,10 +34,10 @@ while True:
 	pixels.show()
 	time.sleep(0.5)
 	'''
-	a = int(input(""))
-	b = int(input(""))
-	c = int(input(""))
-	color = (a,b,c,0)
+	#a = int(input(""))
+	#b = int(input(""))
+	#c = int(input(""))
+	color = (255,255,255,0)
 	pixels.fill(color)
 	pixels.show()
 	time.sleep(0.5)
