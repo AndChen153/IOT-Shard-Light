@@ -36,7 +36,7 @@ while True:
 	#for if there are no rgb arguments
 	if len(sys.argv)==2 and sys.argv[1]:
 		print("1")
-		pixels.fill(255,255,255,0)
+		pixels.fill((255,255,255,0))
 		pixels.show()
 		time.sleep(0.5)
 	#args 3-5 are red green blue
