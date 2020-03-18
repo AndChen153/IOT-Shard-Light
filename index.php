@@ -14,14 +14,14 @@
         echo '<pre>';
         echo htmlspecialchars(print_r($_POST, true));
         echo '</pre>';
-        system ("sudo python /home/pi/lightWebsite/neopixeltest.py");
+        shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py");
     }
     ?>
 
     <form method="post">
-    <p>R value <input type="text" name="name" /></p>
-    <p>G value <input type="text" name="age" /></p>
-    <p>B value <input type="text" name="age" /></p>
+    <p>R value <input type="text" name="R" /></p>
+    <p>G value <input type="text" name="G" /></p>
+    <p>B value <input type="text" name="B" /></p>
     <p><input type="submit" /></p>
     </form>
 	 

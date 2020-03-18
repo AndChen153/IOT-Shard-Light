@@ -41,7 +41,7 @@ while True:
 	pixels.fill(color)
 	pixels.show()
 	time.sleep(0.5)
-	print("break")
+	#print("break")
 	'''
 	pixels.fill(GREEN)
 	pixels.show()
