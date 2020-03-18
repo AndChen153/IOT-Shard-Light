@@ -1,9 +1,9 @@
 import board
 import neopixel
 import time
-import argparse
+import sys
 
-#parser = argparse.ArgumentParser(description='Process some integers.')
+
 
 pixels = neopixel.NeoPixel(board.D18, 2, pixel_order=neopixel.RGBW)
 
@@ -11,6 +11,9 @@ RED = (0,255,0,0)
 BLUE = (0,0,255,0)
 GREEN = (255,0,0,0)
 WHITE = (0,0,0,255)
+
+OFF = (0,0,0,0)
+COLOR = (255,255,255,0)
 
 def showRed():
 	pixels.fill(RED)
@@ -29,19 +32,34 @@ def showWWhite():
 
 
 while True:
+	#arg one is on/off 
+	#for if there are no rgb arguments
+	if len(sys.argv)==2 and sys.argv[1]:
+		pixels.fill(COLOR)
+		pixels.show()
+		time.sleep(0.5)
+	#args 3-5 are red green blue
+	elif len(sys.argv)==5 and sys.argv[1]:
+		R = sys.argv[2]
+		G = sys.argv[3]
+		B = sys.argv[4]
+		COLOR = (R,G,B,0)
+		pixels.fill(COLOR)
+		pixels.show()
+		time.sleep(0.5)
+	else:
+		pixels.fill(OFF)
+		pixels.show()
+		time.sleep(0.5)
+
+
+	
 	'''
 	pixels.fill(RED)
 	pixels.show()
 	time.sleep(0.5)
 	'''
-	#a = int(input(""))
-	#b = int(input(""))
-	#c = int(input(""))
-	color = (255,255,255,0)
-	pixels.fill(color)
-	pixels.show()
-	time.sleep(0.5)
-	#print("break")
+	
 	'''
 	pixels.fill(GREEN)
 	pixels.show()
