@@ -35,11 +35,13 @@ while True:
 	#arg one is on/off 
 	#for if there are no rgb arguments
 	if len(sys.argv)==2 and sys.argv[1]:
+		print("1")
 		pixels.fill(COLOR)
 		pixels.show()
 		time.sleep(0.5)
 	#args 3-5 are red green blue
 	elif len(sys.argv)==5 and sys.argv[1]:
+		print("2")
 		R = sys.argv[2]
 		G = sys.argv[3]
 		B = sys.argv[4]
@@ -48,6 +50,7 @@ while True:
 		pixels.show()
 		time.sleep(0.5)
 	else:
+		print("3")
 		pixels.fill(OFF)
 		pixels.show()
 		time.sleep(0.5)
