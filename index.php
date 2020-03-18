@@ -9,11 +9,23 @@
  
     <body style="background-color: white;">
 
-    <button type="button" onclick=
-        <?php
-        system ("sudo python /home/pi/lightWebsite/neopixeltest.py")
-        ?>
-    >Click Me!</button>
+    <?php
+    if ($_POST) {
+        echo '<pre>';
+        echo htmlspecialchars(print_r($_POST, true));
+        echo '</pre>';
+        system ("sudo python /home/pi/lightWebsite/neopixeltest.py");
+    }
+    ?>
+
+    <form method="post">
+    <p>R value <input type="text" name="name" /></p>
+    <p>G value <input type="text" name="age" /></p>
+    <p>B value <input type="text" name="age" /></p>
+    <p><input type="submit" /></p>
+    </form>
 	 
     </body>
 </html>
+
+<!--system ("sudo python /home/pi/lightWebsite/neopixeltest.py")-->
