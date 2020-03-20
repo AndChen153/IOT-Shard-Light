@@ -55,7 +55,6 @@
     <p><a href="https://www.google.com/search?q=rgb+color+picker&oq=rgb+color+picker&aqs=chrome.0.0l8.1775j0j7&sourceid=chrome&ie=UTF-8">Easy RBG color picker</a></p>
 
     <?php
-        $red = $blue = $green = 0;
         shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py '".$green."' '".$red."' '".$blue."'");
     ?>
 
