@@ -12,6 +12,39 @@
         Light Control Panel 
     </h1> 
 
+    <?php
+        $red = $green = $blue = 0;
+
+        if(isset($_POST['ON'])) { 
+            echo "ON";
+            $red = $green = $blue = 255;
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
+        } 
+        if(isset($_POST['OFF'])) { 
+            echo "OFF";
+            $red = $green = $blue = 0;
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
+        }
+        if(isset($_POST['RED'])) { 
+            echo "RED";
+            $green = $blue = 0;
+            $red = 255;
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
+        } 
+        if(isset($_POST['GREEN'])) { 
+            echo "GREEN";
+            $red = $blue = 0;
+            $green = 255;
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
+        }
+        if(isset($_POST['BLUE'])) { 
+            echo "BLUE";
+            $red = $green = 0;
+            $blue = 255;
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
+        } 
+    ?> 
+
     <form method="post"> 
         <input type="submit" name="ON"
                 value="on"/> 
@@ -25,37 +58,12 @@
                 value="blue"/> 
     </form> 
 
-    <?php
-      
-        if(isset($_POST['ON'])) { 
-            echo "ON";
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True"); 
-        } 
-        if(isset($_POST['OFF'])) { 
-            echo "OFF";
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True 0 0 0"); 
-        }
-        if(isset($_POST['RED'])) { 
-            echo "RED";
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True 0 255 0"); 
-        } 
-        if(isset($_POST['GREEN'])) { 
-            echo "GREEN";
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True 255 0 0"); 
-        }
-        if(isset($_POST['BLUE'])) { 
-            echo "BLUE";
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True 0 0 255"); 
-        } 
-    ?> 
-
 
 
     <h3>Enter RGB Values</h3>
     <p><a href="https://www.google.com/search?q=rgb+color+picker&oq=rgb+color+picker&aqs=chrome.0.0l8.1775j0j7&sourceid=chrome&ie=UTF-8">Easy RBG color picker</a></p>
 
     <?php
-        $red = $green = $blue = 0;
         shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'");
         echo $green;
         echo $red;
