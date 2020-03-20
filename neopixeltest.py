@@ -29,7 +29,7 @@ def showWWhite():
 	pixels.sshow()
 
 
-
+'''
 pixels.fill(RED)
 pixels.show()
 time.sleep(0.05)
@@ -39,17 +39,18 @@ time.sleep(0.05)
 pixels.fill(GREEN)
 pixels.show()
 time.sleep(0.05)
+'''
 
 
 #arg one is on/off 
 #for if there are no rgb arguments
-if len(sys.argv)==2 and sys.argv[1]:
+if len(sys.argv)==2 and sys.argv[1]==True:
 	print("1")
 	pixels.fill((255,255,255,0))
 	pixels.show()
 	time.sleep(0.5)
 	#args 3-5 are red green blue
-elif len(sys.argv)==5 and sys.argv[1]:
+elif len(sys.argv)==5 and sys.argv[1]==True:
 	print("2")
 	R = int(sys.argv[2])
 	G = int(sys.argv[3])

@@ -11,22 +11,39 @@
 
     <?php
       
-        if(isset($_POST['button1'])) { 
+        if(isset($_POST['ON'])) { 
             echo "ON";
             shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True"); 
         } 
-        if(isset($_POST['button2'])) { 
+        if(isset($_POST['OFF'])) { 
             echo "OFF";
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixels.py False 0 0 0"); 
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixels.py True 0 0 0"); 
+        }
+        if(isset($_POST['RED'])) { 
+            echo "RED";
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True 0 255 0"); 
+        } 
+        if(isset($_POST['GREEN'])) { 
+            echo "GREEN";
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixels.py True 255 0 0"); 
+        }
+        if(isset($_POST['BLUE'])) { 
+            echo "BLUE";
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True 0 0 255"); 
         } 
     ?> 
 
     <form method="post"> 
-        <input type="submit" name="button1"
-                value="Button1"/> 
-          
-        <input type="submit" name="button2"
-                value="Button2"/> 
+        <input type="submit" name="ON"
+                value="on"/> 
+        <input type="submit" name="OFF"
+                value="off"/> 
+        <input type="submit" name="RED"
+                value="red"/> 
+        <input type="submit" name="GREEN"
+                value="green"/>
+        <input type="submit" name="BLUE"
+                value="blue"/> 
     </form> 
 
 	 
