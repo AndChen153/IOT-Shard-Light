@@ -64,16 +64,13 @@
     <p><a href="https://www.google.com/search?q=rgb+color+picker&oq=rgb+color+picker&aqs=chrome.0.0l8.1775j0j7&sourceid=chrome&ie=UTF-8">Easy RBG color picker</a></p>
 
     <?php
-        $red1 = $red
-        $green1 = $green
-        $blue1 = $blue
-        shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'");
+        shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$POST["green1"]."' '".$POST["red1"]."' '".$POST["blue1"]."'");
     ?>
 
     <form method="post">
-        RED: <input type="int" name="red" value="<?php echo $red1;?>"><br>
-        GREEN: <input type="int" name="blue" value="<?php echo $green1;?>"><br>
-        BLUE: <input type="int" name="green" value="<?php echo $blue1;?>"><br>
+        RED: <input type="int" name="red1" value="<?php echo $red;?>"><br>
+        GREEN: <input type="int" name="blue1" value="<?php echo $green;?>"><br>
+        BLUE: <input type="int" name="green1" value="<?php echo $blue;?>"><br>
         <input type="submit">
     </form>
     
