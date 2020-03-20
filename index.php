@@ -18,30 +18,30 @@
         if(isset($_POST['ON'])) { 
             echo "ON";
             $red = $green = $blue = 255;
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
+            //shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
         } 
         if(isset($_POST['OFF'])) { 
             echo "OFF";
             $red = $green = $blue = 0;
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
+            //shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
         }
         if(isset($_POST['RED'])) { 
             echo "RED";
             $green = $blue = 0;
             $red = 255;
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
+            //shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
         } 
         if(isset($_POST['GREEN'])) { 
             echo "GREEN";
             $red = $blue = 0;
             $green = 255;
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
+            //shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
         }
         if(isset($_POST['BLUE'])) { 
             echo "BLUE";
             $red = $green = 0;
             $blue = 255;
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
+            //shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'"); 
         } 
     ?> 
 
@@ -65,9 +65,6 @@
 
     <?php
         shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'");
-        echo $green;
-        echo $red;
-        echo $blue;
     ?>
 
     <form action="" method="post">
