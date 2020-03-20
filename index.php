@@ -64,9 +64,11 @@
     <p><a href="https://www.google.com/search?q=rgb+color+picker&oq=rgb+color+picker&aqs=chrome.0.0l8.1775j0j7&sourceid=chrome&ie=UTF-8">Easy RBG color picker</a></p>
 
     <?php
-        $red = $_POST["red1"];
-        $green = $_POST["green1"];
-        $blue = $_POST["blue1"];
+        if(isset($_POST['submit'])){
+            $red = $_POST["red1"];
+            $green = $_POST["green1"];
+            $blue = $_POST["blue1"];
+        }
         shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True '".$green."' '".$red."' '".$blue."'");
     ?>
 
@@ -74,7 +76,7 @@
         RED: <input type="int" name="red1" value="<?php echo $red;?>"><br>
         GREEN: <input type="int" name="blue1" value="<?php echo $green;?>"><br>
         BLUE: <input type="int" name="green1" value="<?php echo $blue;?>"><br>
-        <input type="submit">
+        <input type="submit" value="submit" name="submit">
     </form>
     
 	 
@@ -82,3 +84,4 @@
 </html>
 
 <!--shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py")-->
+
