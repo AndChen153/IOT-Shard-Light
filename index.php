@@ -54,7 +54,11 @@
     <h3>Enter RGB Values</h3>
     <p><a href="https://www.google.com/search?q=rgb+color+picker&oq=rgb+color+picker&aqs=chrome.0.0l8.1775j0j7&sourceid=chrome&ie=UTF-8">Easy RBG color picker</a></p>
 
-    <form action="action.php" method="post">
+    <?php
+    shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py '".$_POST["greenAMT"]."' '".$_POST["redAMT"]."' '".$_POST["blueAMT"]."'");
+    ?>
+
+    <form method="post">
         RED: <input type="int" name="redAMT"><br>
         GREEN: <input type="int" name="blueAMT"><br>
         BLUE: <input type="int" name="greenAMT"><br>
