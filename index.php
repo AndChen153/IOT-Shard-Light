@@ -16,7 +16,7 @@
             shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True"); 
         } 
         if(isset($_POST['button2'])) { 
-            echo "OFF"
+            echo "OFF";
             shell_exec ("sudo python /home/pi/lightWebsite/neopixelsoff.py False 0 0 0"); 
         } 
     ?> 
