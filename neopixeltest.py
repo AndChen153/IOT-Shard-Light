@@ -5,7 +5,7 @@ import sys
 
 pixels = neopixel.NeoPixel(board.D18, 2, pixel_order=neopixel.RGBW)
 
-RED = (1,1,1,1)
+RED = (0,255,0,0)
 BLUE = (0,0,255,0)
 GREEN = (255,0,0,0)
 WHITE = (0,0,0,255)
@@ -32,7 +32,13 @@ def showWWhite():
 
 pixels.fill(RED)
 pixels.show()
-time.sleep(0.1)
+time.sleep(0.05)
+pixels.fill(BLUE)
+pixels.show()
+time.sleep(0.05)
+pixels.fill(GREEN)
+pixels.show()
+time.sleep(0.05)
 
 
 #arg one is on/off 
