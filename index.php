@@ -17,7 +17,7 @@
         } 
         if(isset($_POST['OFF'])) { 
             echo "OFF";
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixels.py True 0 0 0"); 
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixelstest.py True 0 0 0"); 
         }
         if(isset($_POST['RED'])) { 
             echo "RED";
@@ -25,7 +25,7 @@
         } 
         if(isset($_POST['GREEN'])) { 
             echo "GREEN";
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixels.py True 255 0 0"); 
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixelstest.py True 255 0 0"); 
         }
         if(isset($_POST['BLUE'])) { 
             echo "BLUE";
