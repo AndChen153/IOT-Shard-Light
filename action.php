@@ -1,4 +1,3 @@
-<p>R value <input type="text" name="R" /></p>
-        <p>G value <input type="text" name="G" /></p>
-        <p>B value <input type="text" name="B" /></p>
-        <p><input type="submit" /></p>
+<?php
+    shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py '".$_GET["greenAMT"]."' '".$_GET["redAMT"]."' '".$_GET["blueAMT"]."'")
+?>
