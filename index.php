@@ -56,7 +56,7 @@
 
 
     <h3>Enter RGB Values</h3>
-    <p><a href="https://www.google.com/search?q=rgb+color+picker&oq=rgb+color+picker&aqs=chrome.0.0l8.1775j0j7&sourceid=chrome&ie=UTF-8">Easy RBG color picker</a></p>
+    <a href="https://www.google.com/search?q=rgb+color+picker&oq=rgb+color+picker&aqs=chrome.0.0l8.1775j0j7&sourceid=chrome&ie=UTF-8" target="_blank">RBG color picker</a> 
 
     <?php
         if(isset($_POST['submit'])){
