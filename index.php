@@ -17,7 +17,7 @@
 
         if(isset($_POST['ON'])) { 
             echo "ON";
-            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True")
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True");
         } 
         if(isset($_POST['OFF'])) { 
             echo "OFF";
@@ -44,7 +44,7 @@
         } 
         if(isset($_POST['POWEROFF'])) { 
             echo "SHUTTING DOWN";
-            shell_exec ("sudo poweroff")
+            shell_exec ("sudo poweroff");
         } 
     ?> 
 
