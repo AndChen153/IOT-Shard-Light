@@ -3,7 +3,11 @@ import neopixel
 import time
 import sys
 
-pixels = neopixel.NeoPixel(board.D18, 2, pixel_order=neopixel.RGBW)
+pixel_pin = board.D18
+num_pixels = 2
+ORDER = neopixel.RGBW
+
+pixels = neopixel.NeoPixel(pixel_pin, num_pixels, pixel_order=ORDER)
 
 RED = (0,255,0,0)
 BLUE = (0,0,255,0)
@@ -13,29 +17,43 @@ WHITE = (0,0,0,255)
 OFF = (0,0,0,0)
 COLOR = (255,255,255,0)
 
-def showRed():
-	pixels.fill(RED)
-	pixels.show()
+def wheel(pos):
+    # Input a value 0 to 255 to get a color value.
+    # The colours are a transition r - g - b - back to r.
+    if pos < 0 or pos > 255:
+        r = g = b = 0
+    elif pos < 85:
+        r = int(pos * 3)
+        g = int(255 - pos*3)
+        b = 0
+    elif pos < 170:
+        pos -= 85
+        r = int(255 - pos*3)
+        g = 0
+        b = int(pos*3)
+    else:
+        pos -= 170
+        r = 0
+        g = int(pos*3)
+        b = int(255 - pos*3)
+    return (r, g, b) if ORDER == neopixel.RGB or ORDER == neopixel.GRB else (r, g, b, 0)
 
-def showBlue():
-	pixels.fill(BLUE)
-	pixels.show()
 
-def showGreen():
-	pixels.fill(GREEN)
-	pixels.show()
-def showWWhite():
-	pixels.fill(WHITE)
-	pixels.sshow()
+def rainbow_cycle(wait):
+    for j in range(255):
+        for i in range(num_pixels):
+            pixel_index = (i * 256 // num_pixels) + j
+            pixels[i] = wheel(pixel_index & 255)
+        pixels.show()
+        time.sleep(wait)
 
 
 #arg one is on/off 
 #for if there are no rgb arguments
 if len(sys.argv)==2 and sys.argv[1]:
 	print("1")
-	pixels.fill((255,255,255,0))
-	pixels.show()
-	time.sleep(0.5)
+	while True:
+		rainbow_cycle(0.001)
 	#args 3-5 are red green blue
 elif len(sys.argv)==5 and sys.argv[1]:
 	print("2")

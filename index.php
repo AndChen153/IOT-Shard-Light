@@ -51,6 +51,8 @@
                 value="green"/>
         <input type="submit" name="BLUE"
                 value="blue"/> 
+        <input type="submit" name="WHITE"
+                value="white"/> 
     </form> 
 
 
