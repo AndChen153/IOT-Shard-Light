@@ -17,7 +17,7 @@
 
         if(isset($_POST['ON'])) { 
             echo "ON";
-            $red = $green = $blue = 255;
+            shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True")
         } 
         if(isset($_POST['OFF'])) { 
             echo "OFF";
@@ -37,6 +37,14 @@
             echo "BLUE";
             $red = $green = 0;
             $blue = 255;
+        }
+        if(isset($_POST['WHITE'])) { 
+            echo "WHITE";
+            $red = $green = $blue = 255;
+        } 
+        if(isset($_POST['POWEROFF'])) { 
+            echo "SHUTTING DOWN";
+            shell_exec ("sudo poweroff")
         } 
     ?> 
 
@@ -53,6 +61,8 @@
                 value="blue"/> 
         <input type="submit" name="WHITE"
                 value="white"/> 
+        <input type="submit" name="POWEROFF"
+                value="poweroff"/> 
     </form> 
 
 
