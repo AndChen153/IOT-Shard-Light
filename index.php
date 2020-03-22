@@ -16,34 +16,34 @@
         $red = $green = $blue = 0;
 
         if(isset($_POST['ON'])) { 
-            echo "ON";
+            //echo "ON";
             shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True");
         } 
         if(isset($_POST['OFF'])) { 
-            echo "OFF";
+            //echo "OFF";
             shell_exec ("sudo killall python");
             $red = $green = $blue = 0; 
         }
         if(isset($_POST['RED'])) { 
-            echo "RED";
+            //echo "RED";
             shell_exec ("sudo killall python");
             $green = $blue = 0;
             $red = 255;
         } 
         if(isset($_POST['GREEN'])) { 
-            echo "GREEN";
+            //echo "GREEN";
             shell_exec ("sudo killall python");
             $red = $blue = 0;
             $green = 255; 
         }
         if(isset($_POST['BLUE'])) { 
-            echo "BLUE";
+            //echo "BLUE";
             shell_exec ("sudo killall python");
             $red = $green = 0;
             $blue = 255;
         }
         if(isset($_POST['WHITE'])) { 
-            echo "WHITE";
+            //echo "WHITE";
             shell_exec ("sudo killall python");
             $red = $green = $blue = 255;
         } 
@@ -51,17 +51,17 @@
 
     <form method="post"> 
         <input type="submit" name="ON"
-                value="on"/> 
+                value="ON"/> 
         <input type="submit" name="OFF"
-                value="off"/> 
+                value="OFF"/> 
         <input type="submit" name="RED"
-                value="red"/> 
+                value="RED"/> 
         <input type="submit" name="GREEN"
-                value="green"/>
+                value="GREEN"/>
         <input type="submit" name="BLUE"
-                value="blue"/> 
+                value="BLUE"/> 
         <input type="submit" name="WHITE"
-                value="white"/> 
+                value="WHITE"/> 
     </form> 
 
 
@@ -79,10 +79,14 @@
     ?>
 
     <form method="post">
-        RED: <input type="int" name="red1" value="<?php echo $red;?>"><br>
-        GREEN: <input type="int" name="green1" value="<?php echo $green;?>"><br>
-        BLUE: <input type="int" name="blue1" value="<?php echo $blue;?>"><br>
-        <input type="submit" value="submit" name="submit">
+        RED: <input type="int" name="red1" 
+                value="<?php echo $red;?>"><br>
+        GREEN: <input type="int" name="green1" 
+                value="<?php echo $green;?>"><br>
+        BLUE: <input type="int" name="blue1" 
+                value="<?php echo $blue;?>"><br>
+        <input type="submit" 
+                value="submit" name="submit">
     </form>
     
 	 
