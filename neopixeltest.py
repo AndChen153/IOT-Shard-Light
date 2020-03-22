@@ -53,7 +53,7 @@ def rainbow_cycle(wait):
 if len(sys.argv)==2 and sys.argv[1]:
 	print("1")
 	while True:
-		rainbow_cycle(0.008)
+		rainbow_cycle(0.004)
 #args 3-5 are red green blue
 elif len(sys.argv)==5 and sys.argv[1]:
 	print("2")
