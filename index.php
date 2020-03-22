@@ -21,30 +21,31 @@
         } 
         if(isset($_POST['OFF'])) { 
             echo "OFF";
+            shell_exec ("sudo killall python");
             $red = $green = $blue = 0; 
         }
         if(isset($_POST['RED'])) { 
             echo "RED";
+            shell_exec ("sudo killall python");
             $green = $blue = 0;
             $red = 255;
         } 
         if(isset($_POST['GREEN'])) { 
             echo "GREEN";
+            shell_exec ("sudo killall python");
             $red = $blue = 0;
             $green = 255; 
         }
         if(isset($_POST['BLUE'])) { 
             echo "BLUE";
+            shell_exec ("sudo killall python");
             $red = $green = 0;
             $blue = 255;
         }
         if(isset($_POST['WHITE'])) { 
             echo "WHITE";
+            shell_exec ("sudo killall python");
             $red = $green = $blue = 255;
-        } 
-        if(isset($_POST['POWEROFF'])) { 
-            echo "SHUTTING DOWN";
-            shell_exec ("sudo poweroff");
         } 
     ?> 
 
@@ -61,8 +62,6 @@
                 value="blue"/> 
         <input type="submit" name="WHITE"
                 value="white"/> 
-        <input type="submit" name="POWEROFF"
-                value="poweroff"/> 
     </form> 
 
 
