@@ -17,6 +17,7 @@
 
         if(isset($_POST['ON'])) { 
             //echo "ON";
+            shell_exec ("sudo killall python");
             shell_exec ("sudo python /home/pi/lightWebsite/neopixeltest.py True");
         } 
         if(isset($_POST['OFF'])) { 
